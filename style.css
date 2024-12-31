@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Vinyl&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: "Lato", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100vw;
+    height: 100vw;
+}
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+.container-hny {
+    position: relative;
+    font-size: 3em;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    font-weight: 800;
+}
+.letter:nth-child(1){
+    color: aliceblue;
+}
+.letter:nth-child(2){
+    color: pink;
+}
+.letter:nth-child(3){
+    color: yellow;
+}
+.letter:nth-child(4){
+    color: orange;
+}
+.letter:nth-child(5){
+    color: skyblue;
+}
+.letter:nth-child(6){
+    color: orange;
+    margin: 0.4rem;
+}
+.letter:nth-child(7){
+    color: grey;
+}
+.letter:nth-child(8){
+    color: greenyellow;
+}
+.letter:nth-child(9){
+    color: rgb(0, 238, 255);
+}
+.letter:nth-child(10){
+    color: rgb(253, 240, 255);
+    margin: 0.4rem;
+}
+.letter:nth-child(11){
+    color: rgb(0, 255, 106);
+}
+.letter:nth-child(12){
+    color: pink;
+}
+.letter:nth-child(13){
+    color: rgb(228, 255, 192);
+}
+.letter:nth-child(14){
+    color: rgb(209, 192, 255);
+}
+.letter {
+    opacity: 0;
+    animation: blast 2s forwards;
+}
+@keyframes blast {
+    0% {
+        opacity: 0;
+        transform: scale(0) translateY(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.5) translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Ballon */
+.ballons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.balloon {
+    width: 3rem;
+    height: 4rem;
+    background-color: red;
+    border-top-left-radius: 46%;
+    border-top-right-radius: 46%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    position: relative;
+    box-shadow: inset -15px -15px 15px rgba(255, 255, 255, 0.6), 
+                inset 10px 10px 15px rgba(0, 0, 0, 0.2),
+                10px 10px 15px rgba(0, 0, 0, 0.1);
+    animation: ballon-move 2s ease-in-out infinite;
+}
+.balloon::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #d32828;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.string {
+    width: 2px;
+    height: 40px;
+    background-color: #8B0000;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.b-t-container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    margin-top: -16rem;
+    transition: 0.5s ease;
+    animation: ballon-fly-top 10s ease-in-out;
+}
+.b-t-container h1{
+    font-size: 4em;
+    font-weight: 800;
+    position: absolute;
+    top: 2rem;
+}
+.b-t-container1{
+    margin-right: 13rem;
+    animation-delay: 0s;
+}
+.b-t-container2{
+    margin-right: 4rem;
+}
+.b-t-container3{
+    margin-right: -4.4rem;
+}
+.b-t-container5{
+    margin-right: -13.4rem;
+}
+.b-t-container1 h1{
+    animation-delay: 0s;
+    color: pink;
+}
+.b-t-container2 h1{
+    color: rgb(0, 195, 255);
+}
+.b-t-container3 h1{
+    color: rgb(255, 208, 0);
+}
+.b-t-container5 h1{
+    color: rgb(174, 0, 255);
+}
+@keyframes ballon-fly-top{
+    0%{
+        margin-top: 100rem;
+    }
+    70%{
+        margin-top: -16.4rem;
+    }
+    84%{
+        margin-top: -16rem;
+    }
+    92%{
+        margin-top: -16.2rem;
+    }
+    100%{
+        margin-top: -16rem;
+    }
+}
+@keyframes ballon-move{
+    0%{
+        width: 3rem;
+        height: 4rem;
+    }
+    50%{
+        width: 2.9rem;
+        height: 3.9rem;
+    }
+    100%{
+        width: 3rem;
+        height: 4rem;
+    }
+}
+
+
+
+/* Responsive */
+@media(max-width: 480px){
+    .container-hny{
+        font-size: 2.4em;
+    }
+}
